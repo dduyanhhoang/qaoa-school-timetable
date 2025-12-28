@@ -1,3 +1,23 @@
+[project]
+name = "uv-docker-example"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "ipykernel>=6.31.0",
+    "kbw==0.1.1",
+    "ket-lang==0.2",
+    "matplotlib>=3.9.4",
+    "networkx>=3.2.1",
+    "numpy>=2.0.2",
+    "pandas>=2.3.3",
+    "psutil>=7.2.0",
+    "pyqubo>=1.5.0",
+    "scipy>=1.13.1",
+    "xhsttparser",
+]
+
 [tool.poetry]
 name = "qaoa-school-timetable"
 version = "0.1.0"
@@ -11,11 +31,20 @@ python = ">=3.11,<3.12"
 xhsttparser = { git = "https://gitlab.com/laqcc-quantuloop/xhsttparser.git" }
 pyqubo = "^1.4.0"
 pandas = "^2.1.2"
+networkx = "^3.6.1"
 
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.26.0"
 
+[tool.uv.sources]
+xhsttparser = { git = "https://gitlab.com/laqcc-quantuloop/xhsttparser.git" }
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pip>=25.3",
+]
