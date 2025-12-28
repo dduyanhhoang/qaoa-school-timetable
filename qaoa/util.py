@@ -1,5 +1,6 @@
 import networkx as nx
 from itertools import combinations
+import random
 
 def create_graph_from_events(events):
     G = nx.Graph()
