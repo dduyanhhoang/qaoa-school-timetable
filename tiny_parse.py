@@ -64,7 +64,7 @@ def cost_function_tiny(G_Candidate):
         except KeyError:
             C += 100
 
-            # 4. Check Slot Availability (Must be 5)
+        # 4. Check Slot Availability (Must be 5)
         try:
             avail_val = DF_SLOTS.loc[teacher, slot]
             if avail_val < 5:
@@ -74,13 +74,16 @@ def cost_function_tiny(G_Candidate):
 
     # 5. Check Quotas
     for teacher, count in teacher_counts.items():
-        min_q = DF_QUOTAS.loc[teacher, 'Min quota']
-        max_q = DF_QUOTAS.loc[teacher, 'Max quota']
+        try:
+            min_q = DF_QUOTAS.loc[teacher, 'Min quota']
+            max_q = DF_QUOTAS.loc[teacher, 'Max quota']
 
-        if count < min_q:
-            C += 5 * (min_q - count)
-        elif count > max_q:
-            C += 5 * (count - max_q)
+            if count < min_q:
+                C += 5 * (min_q - count)
+            elif count > max_q:
+                C += 5 * (count - max_q)
+        except KeyError:
+            pass  # Should not happen if data is consistent
 
     return C
 
