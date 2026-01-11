@@ -26,13 +26,6 @@ or
 kbw > /dev/null 2>&1 &
 ```
 
-#### Script
-
-* `min.py` - minimal experiment, using 56 qubits.
-* `toy.py` - experiment using `dataset/Toy_Model.xml` dataset, using 30 qubits.
-* `den_smallschool.py` - experiment using `dataset/den-smallschool.xml` dataset, using 125 qubits.
-* `bra_instance01.py` - experiment using `dataset/bra-instanct01.xml` dataset, using 1196 qubits.
-
 ## Author's information
 
 Work first published at https://ieeexplore.ieee.org/document/9504701 and later expanded in https://repositorio.ufsc.br/handle/123456789/231060
